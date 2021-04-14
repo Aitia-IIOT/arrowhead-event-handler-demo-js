@@ -103,7 +103,7 @@
    networkService.delete(serviceRegistryAddress + '/unregister', {params: queryParams})
      .then((response) => {
        if(response.status === 200) {
-         return resolve(`Successfully removed ${config.n} with Temperature service from SR`)
+         return resolve(`Successfully removed ${config.n} with ${serviceDefinition} service from SR`)
        }
      })
      .catch(error => {
