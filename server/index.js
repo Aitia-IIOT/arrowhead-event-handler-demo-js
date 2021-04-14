@@ -3,7 +3,7 @@ import express from 'express'
 import moment from 'moment'
 import { config, coreSystemInfo } from './config'
 import { echo as echoSR, register, query, unregister, registerSystem } from './services/arrowhead/serviceRegistry'
-import { echo as echoEH, publish, subscibe} from './services/arrowhead/eventHandler'
+import { echo as echoEH, publish, subscibe, unsubscribe} from './services/arrowhead/eventHandler'
 
 
 let app = express()
@@ -123,9 +123,15 @@ const publishEvent = async () => {
 process.on('SIGINT', async () => {
     console.log('\nApplication System is shutting down!\n')
     if(config.t === 'provider'){
+        // cleanup task for the provider
         console.log('Unregistering service')
         const unregisterResponse = await unregister("temperature")
         console.log(unregisterResponse)
+    } else if(config.t === 'consumer') {
+        // cleanup task for the consumer
+        console.log('Revoking subscription')
+        const unsubscribeResponse = await unsubscribe("my-event")
+        console.log(unsubscribeResponse)
     }
 
     process.exit()

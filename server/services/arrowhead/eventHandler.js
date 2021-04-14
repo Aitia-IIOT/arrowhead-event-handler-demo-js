@@ -112,7 +112,7 @@
  export async function unsubscribe(eventType){
    console.log('Event unsubscribe started')
    return new Promise((resolve, reject) => {
-     const eventHandlerAddress = coreSystemInfo && coreSystemInfo.eventhandler ? `${config.serverSSLEnabled ? 'https' : 'http' }://${coreSystemInfo.eventhandler.address}:${coreSystemInfo.eventhandler.port}/eventhandler` : null
+     const eventHandlerAddress = coreSystemInfo && coreSystemInfo.eventhandler ? `http://${coreSystemInfo.eventhandler.address}:${coreSystemInfo.eventhandler.port}/eventhandler` : null
      if(!eventHandlerAddress){
        return reject('No address for Event Handler')
      }
@@ -122,9 +122,9 @@
      }
  
      const queryParams = {
-       system_name: config.clientSystemName,
-       address: config.address,
-       port: config.serverPort,
+       system_name: config.n,
+       address: '127.0.0.1',
+       port: config.p,
        event_type: eventType
      }
  
