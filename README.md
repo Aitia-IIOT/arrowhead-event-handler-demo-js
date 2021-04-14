@@ -1,6 +1,6 @@
 # ARROWHEAD EVENT HANDLER CLIENT
 
-This is a NodeJS project, which contains offers clients for the Event Hanlder
+This is a NodeJS project, which offers Arrowhead compliant clients which are able to use the Event Handler
 
 ### For the first time
 
