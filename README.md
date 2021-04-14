@@ -21,7 +21,7 @@ This is a NodeJS project, which offers Arrowhead compliant clients which are abl
 | Service Registry Address | --service_registry | String | no |
 
 Example to start a provider:
-`npm run start -- -n "svetlin_system" -t provider -p 8080`
+`npm run start -- -n svetlin_system -t provider -p 8080`
 
 Example to start a consumer:  
 `npm run start -- -n svetlin_consumer -p 8081 -t consumer`
