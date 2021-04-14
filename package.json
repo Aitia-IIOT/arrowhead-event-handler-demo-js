@@ -1,0 +1,37 @@
+{
+  "name": "arrowhead-node-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/dev",
+    "nodemon": "nodemon bin/dev",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && babel server -s -d dist",
+    "production": "npm run build && node bin/production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsvetlin/arrowhead-event-handler-js.git"
+  },
+  "author": "Svetlin Tanyi",
+  "license": "EPL-2.0",
+  "bugs": {
+    "url": "https://github.com/tsvetlin/arrowhead-event-handler-js/issues"
+  },
+  "homepage": "https://github.com/tsvetlin/arrowhead-event-handler-js#README",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.16.3",
+    "minimist": "^1.2.5",
+    "moment": "^2.29.1"
+  }
+}
