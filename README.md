@@ -20,7 +20,7 @@ This is a NodeJS project, which offers Arrowhead compliant clients which are abl
 | System Type         | -t               | provider or consumer | yes |
 | Service Registry Address | --service_registry | String | no |
 
-Example to start a provider:
+Example to start a provider:  
 `npm run start -- -n svetlin_system -t provider -p 8080`
 
 Example to start a consumer:  
